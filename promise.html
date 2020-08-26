@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        setTimeout(()=>{
+                console.log('setTimeout2');
+        }, 5000);
+        new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve();
+            }, 5000);
+        }).then(res=>{
+            console.log('promise',res);
+        });
+
+
+        // 本质上是判断是否触发了回调
+
+        setTimeout(() => {
+            console.log('setTimeout1')
+        }, 1000);
+
+    </script>
+</body>
+</html>
